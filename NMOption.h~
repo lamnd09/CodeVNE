@@ -1,0 +1,53 @@
+#define SEED time(NULL)
+#define randomize() srand((unsigned)SEED)
+#define random(num) (rand()%(num))
+
+#define TWIN 10			// duration of a window
+
+//// Physical Network
+#define MAXSNODENUM 50	// maximum # of physical nodes
+#define SNODENUM 49		// # of nodes in physical network
+#define XRANGE 100		// X range of area
+#define YRANGE 100		// Y range of area
+
+// SN Topology Type
+#define TYPETOPO 0		// random
+//#define TYPETOPO 1	// grid
+
+// range of coverage [CVWMIN, CVWMAX]
+#define CVWMIN 10		// Physical node Coverage minmum
+#define CVWMAX 50		// Physical node Coverage Maximum
+
+// range of CPU resource of physical node [SNWMIN, SNWMAX]
+#define SNWMIN 100		// Physical node CPU Resource minmum
+#define SNWMAX 500		// Physical node CPU Resource Maximum
+
+// range of physical link resource [SLWMIN, SLWMAX]
+#define SLWMIN 100		// Physical link capacity Resource minmum
+#define SLWMAX 500		// Physical link capacity Resource Maximum
+
+
+//// Virtual Network
+// VN Topology Type
+//#define VTYPETOPO 0		// random
+//#define VTYPETOPO 1	// tree
+#define VTYPETOPO 2	// star
+
+// range of # of nodes in VN [MINVNODENUM, MAXVNODENUM]
+#define MINVNODENUM 2	// minimum number of nodes in a virtual network request 
+#define MAXVNODENUM 10	// Maximum number of nodes in a virtual network request 
+#define VNNUM 100		// # of VN requests (it should be lar	 POIMEAN * WINNUM
+#define MINPRVNLINK 50	// minimum probability that a pair of virtual nodes is connected (%)
+#define MAXPRVNLINK 90	// Maximum probability that a pair of virtual nodes is connected (%)
+
+// range of CPU resource of virtual node in VN [VNWMIN, VNWMAX]
+#define VNWMIN 10		// minimum of virtual node resource
+#define VNWMAX 30		// Maximum of virtual node resource
+// range of virtual link resource in VN [VLWMIN, VLWMAX]
+#define VLWMIN 10		// minimum of virtual link resource
+#define VLWMAX 30		// Maximum of virtual link resource
+
+//// Virtual Network Request Intensity
+// VN request arrival rate [Poisson rate;VNs per a window x Exponential RV remaining windows; Windows per a VN]
+#define POIMEAN 5
+#define EXPMEAN 4
